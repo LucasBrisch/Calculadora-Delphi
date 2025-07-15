@@ -1,0 +1,111 @@
+unit calculadora;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm3 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Panel9: TPanel;
+    Panel10: TPanel;
+    Panel11: TPanel;
+    result: TLabel;
+    btn0: TButton;
+    btn00: TButton;
+    btndot: TButton;
+    Panel12: TPanel;
+    btn1: TButton;
+    btn2: TButton;
+    btn3: TButton;
+    Panel13: TPanel;
+    btn4: TButton;
+    btn5: TButton;
+    btn6: TButton;
+    Panel14: TPanel;
+    Btn7: TButton;
+    btn8: TButton;
+    btn9: TButton;
+    btnequals: TButton;
+    btnpercentage: TButton;
+    btnbackspace: TButton;
+    btnmod: TButton;
+    Panel3: TPanel;
+    btndivide: TButton;
+    btnminus: TButton;
+    btnplus: TButton;
+    btntimes: TButton;
+    procedure btn1Click(Sender: TObject);
+    procedure btnplusClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnequalsClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    var resultado, temp, num1, num2, operador : String;
+    var tempresultado : integer;
+    var second, resolvido : boolean;
+    
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm3.btn1Click(Sender: TObject);
+begin
+if resolvido then begin
+  num1 := '1';
+  result.Caption := '1';
+  resolvido := false;
+  resultado := '1';
+  second := true;
+end else
+  if not second then begin
+        resultado := resultado + '1';
+        num1 := num1 + '1';
+        result.Caption := resultado;
+  end else begin
+    resultado := resultado + '1';
+        num2 := num2 + '1';
+        result.Caption := resultado;
+  end;
+end;
+
+procedure TForm3.btnequalsClick(Sender: TObject);
+begin
+if operador = 'soma' then begin
+  result.Caption := inttostr(num1.ToInteger() + num2.ToInteger());
+  num1 := inttostr(num1.ToInteger() + num2.ToInteger());
+  num2 := '';
+  resolvido := true;
+
+end;
+
+end;
+
+procedure TForm3.btnplusClick(Sender: TObject);
+begin
+
+      resultado := resultado + '+';
+      result.Caption := resultado;
+      second := True;
+      operador := 'soma';
+end;
+
+
+procedure TForm3.FormCreate(Sender: TObject);
+begin
+    second := False;
+end;
+
+end.
