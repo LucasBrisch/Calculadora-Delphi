@@ -18,7 +18,7 @@ object Form3: TForm3
     Width = 497
     Height = 200
     BevelOuter = bvNone
-    Color = 16777088
+    Color = clSilver
     ParentBackground = False
     ShowCaption = False
     TabOrder = 0
@@ -31,9 +31,6 @@ object Form3: TForm3
       BevelOuter = bvNone
       ShowCaption = False
       TabOrder = 0
-      ExplicitLeft = -288
-      ExplicitTop = -119
-      ExplicitWidth = 473
       object Panel6: TPanel
         AlignWithMargins = True
         Left = 320
@@ -48,9 +45,6 @@ object Form3: TForm3
         BevelOuter = bvNone
         ShowCaption = False
         TabOrder = 0
-        ExplicitLeft = 295
-        ExplicitTop = 1
-        ExplicitHeight = 158
         object Panel7: TPanel
           Left = 87
           Top = 0
@@ -60,9 +54,6 @@ object Form3: TForm3
           AutoSize = True
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitLeft = 7
-          ExplicitTop = 1
-          ExplicitHeight = 156
           object btnequals: TButton
             Left = 0
             Top = 120
@@ -72,8 +63,6 @@ object Form3: TForm3
             Caption = '='
             TabOrder = 0
             OnClick = btnequalsClick
-            ExplicitLeft = 6
-            ExplicitTop = 126
           end
           object btnpercentage: TButton
             Left = 0
@@ -83,9 +72,6 @@ object Form3: TForm3
             Align = alTop
             Caption = '%'
             TabOrder = 1
-            ExplicitLeft = 1
-            ExplicitTop = 26
-            ExplicitWidth = 88
           end
           object btnbackspace: TButton
             Left = 0
@@ -95,9 +81,6 @@ object Form3: TForm3
             Align = alTop
             Caption = '<-'
             TabOrder = 2
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitWidth = 88
           end
           object btnmod: TButton
             Left = 0
@@ -107,9 +90,6 @@ object Form3: TForm3
             Align = alBottom
             Caption = 'Mod'
             TabOrder = 3
-            ExplicitLeft = 1
-            ExplicitTop = 72
-            ExplicitWidth = 88
           end
         end
         object Panel3: TPanel
@@ -121,9 +101,6 @@ object Form3: TForm3
           AutoSize = True
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitLeft = 7
-          ExplicitTop = 1
-          ExplicitHeight = 156
           object btndivide: TButton
             Left = 0
             Top = 120
@@ -132,9 +109,7 @@ object Form3: TForm3
             Align = alBottom
             Caption = '/'
             TabOrder = 0
-            ExplicitLeft = 1
-            ExplicitTop = 115
-            ExplicitWidth = 88
+            OnClick = btndivideClick
           end
           object btnminus: TButton
             Left = 0
@@ -144,9 +119,7 @@ object Form3: TForm3
             Align = alTop
             Caption = '-'
             TabOrder = 1
-            ExplicitLeft = 1
-            ExplicitTop = 41
-            ExplicitWidth = 88
+            OnClick = btnminusClick
           end
           object btnplus: TButton
             Left = 0
@@ -157,9 +130,6 @@ object Form3: TForm3
             Caption = '+'
             TabOrder = 2
             OnClick = btnplusClick
-            ExplicitLeft = -4
-            ExplicitTop = -6
-            ExplicitWidth = 88
           end
           object btntimes: TButton
             Left = 0
@@ -169,9 +139,7 @@ object Form3: TForm3
             Align = alBottom
             Caption = 'X'
             TabOrder = 3
-            ExplicitLeft = 1
-            ExplicitTop = 77
-            ExplicitWidth = 88
+            OnClick = btntimesClick
           end
         end
       end
@@ -189,9 +157,6 @@ object Form3: TForm3
         BevelOuter = bvNone
         ShowCaption = False
         TabOrder = 1
-        ExplicitLeft = 1
-        ExplicitTop = 1
-        ExplicitHeight = 158
         object Panel2: TPanel
           Left = 0
           Top = 120
@@ -201,9 +166,6 @@ object Form3: TForm3
           BevelOuter = bvNone
           ShowCaption = False
           TabOrder = 0
-          ExplicitLeft = 1
-          ExplicitTop = 1
-          ExplicitWidth = 294
           object btn0: TButton
             Left = 0
             Top = 0
@@ -212,9 +174,7 @@ object Form3: TForm3
             Align = alLeft
             Caption = '0'
             TabOrder = 0
-            ExplicitLeft = 112
-            ExplicitTop = 8
-            ExplicitHeight = 25
+            OnClick = btn0Click
           end
           object btn00: TButton
             AlignWithMargins = True
@@ -229,10 +189,6 @@ object Form3: TForm3
             Align = alClient
             Caption = '00'
             TabOrder = 1
-            ExplicitLeft = 82
-            ExplicitTop = 3
-            ExplicitWidth = 142
-            ExplicitHeight = 38
           end
           object btndot: TButton
             Left = 221
@@ -242,8 +198,6 @@ object Form3: TForm3
             Align = alRight
             Caption = '.'
             TabOrder = 2
-            ExplicitTop = 1
-            ExplicitHeight = 38
           end
         end
         object Panel12: TPanel
@@ -254,9 +208,6 @@ object Form3: TForm3
           Align = alTop
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitLeft = 2
-          ExplicitTop = 9
-          ExplicitWidth = 294
           object btn1: TButton
             Left = 0
             Top = 0
@@ -266,9 +217,6 @@ object Form3: TForm3
             Caption = '1'
             TabOrder = 0
             OnClick = btn1Click
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitHeight = 38
           end
           object btn2: TButton
             AlignWithMargins = True
@@ -283,10 +231,7 @@ object Form3: TForm3
             Align = alClient
             Caption = '2'
             TabOrder = 1
-            ExplicitLeft = 83
-            ExplicitTop = -1
-            ExplicitWidth = 122
-            ExplicitHeight = 38
+            OnClick = btn2Click
           end
           object btn3: TButton
             Left = 221
@@ -296,9 +241,7 @@ object Form3: TForm3
             Align = alRight
             Caption = '3'
             TabOrder = 2
-            ExplicitLeft = 218
-            ExplicitTop = 1
-            ExplicitHeight = 38
+            OnClick = btn3Click
           end
         end
         object Panel13: TPanel
@@ -310,9 +253,6 @@ object Form3: TForm3
           BevelOuter = bvNone
           ShowCaption = False
           TabOrder = 2
-          ExplicitLeft = 2
-          ExplicitTop = 9
-          ExplicitWidth = 294
           object btn4: TButton
             Left = 0
             Top = 0
@@ -321,8 +261,7 @@ object Form3: TForm3
             Align = alLeft
             Caption = '4'
             TabOrder = 0
-            ExplicitLeft = -2
-            ExplicitHeight = 38
+            OnClick = btn4Click
           end
           object btn5: TButton
             AlignWithMargins = True
@@ -337,10 +276,8 @@ object Form3: TForm3
             Align = alClient
             Caption = '5'
             TabOrder = 1
-            ExplicitLeft = 86
-            ExplicitTop = 1
-            ExplicitWidth = 122
-            ExplicitHeight = 38
+            OnClick = btn5Click
+            ExplicitLeft = 82
           end
           object btn6: TButton
             Left = 221
@@ -350,7 +287,7 @@ object Form3: TForm3
             Align = alRight
             Caption = '6'
             TabOrder = 2
-            ExplicitHeight = 38
+            OnClick = btn6Click
           end
         end
         object Panel14: TPanel
@@ -362,9 +299,6 @@ object Form3: TForm3
           BevelOuter = bvNone
           ShowCaption = False
           TabOrder = 3
-          ExplicitLeft = 2
-          ExplicitTop = 9
-          ExplicitWidth = 294
           object Btn7: TButton
             Left = 0
             Top = 0
@@ -373,9 +307,7 @@ object Form3: TForm3
             Align = alLeft
             Caption = '7'
             TabOrder = 0
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitHeight = 38
+            OnClick = Btn7Click
           end
           object btn8: TButton
             AlignWithMargins = True
@@ -390,10 +322,7 @@ object Form3: TForm3
             Align = alClient
             Caption = '8'
             TabOrder = 1
-            ExplicitLeft = 86
-            ExplicitTop = 1
-            ExplicitWidth = 122
-            ExplicitHeight = 38
+            OnClick = btn8Click
           end
           object btn9: TButton
             Left = 221
@@ -403,7 +332,7 @@ object Form3: TForm3
             Align = alRight
             Caption = '9'
             TabOrder = 2
-            ExplicitHeight = 38
+            OnClick = btn9Click
           end
         end
       end
@@ -416,9 +345,6 @@ object Form3: TForm3
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 144
-      ExplicitTop = 8
-      ExplicitWidth = 185
       object result: TLabel
         AlignWithMargins = True
         Left = 40
@@ -433,13 +359,11 @@ object Form3: TForm3
         Alignment = taCenter
         Caption = 'result'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
+        Font.Color = clWhite
         Font.Height = -29
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 41
-        ExplicitTop = 1
         ExplicitWidth = 70
         ExplicitHeight = 40
       end
