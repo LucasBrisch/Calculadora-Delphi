@@ -81,6 +81,7 @@ object Form3: TForm3
             Align = alTop
             Caption = '<-'
             TabOrder = 2
+            OnClick = btnbackspaceClick
           end
           object btnmod: TButton
             Left = 0
@@ -90,6 +91,7 @@ object Form3: TForm3
             Align = alBottom
             Caption = 'Mod'
             TabOrder = 3
+            OnClick = btnmodClick
           end
         end
         object Panel3: TPanel
@@ -277,7 +279,6 @@ object Form3: TForm3
             Caption = '5'
             TabOrder = 1
             OnClick = btn5Click
-            ExplicitLeft = 82
           end
           object btn6: TButton
             Left = 221

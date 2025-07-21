@@ -59,6 +59,8 @@ type
     procedure btnminusClick(Sender: TObject);
     procedure btntimesClick(Sender: TObject);
     procedure btndivideClick(Sender: TObject);
+    procedure btnmodClick(Sender: TObject);
+    procedure btnbackspaceClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -152,14 +154,43 @@ begin
 end;
 
 
+procedure TForm3.btnbackspaceClick(Sender: TObject);
+begin
+  num1 := '';
+  num2 := '';
+  result.Caption := '';
+  resultado := '';
+
+end;
+
 procedure TForm3.btn00Click(Sender: TObject);
 begin
   AdicionarNumero('00');
 end;
 
+function modhandler (total, num : integer; expr : string) : integer;
+var I, x : integer;
+temp : String;
+begin
+for I := 0 to Length(expr) do begin
+  if expr[I] = 'm' then begin
+    for x := I + 1 to length(expr) do begin
+      if expr[x] in ['0'..'9'] then begin
+        temp := temp + expr [x];
+      end else if expr [x] in ['+', '-', '*', '/', 'm'] then begin
+        Result := num mod strtoint(temp);
+      end;
+
+    end;
+  end;
+
+end;
+end;
+
+
 function AvaliarExpressao(expr: string): Integer;
 var
-  i, num, total: Integer;
+  i, num, total, temp2: Integer;
   operador: Char;
   temp: string;
 begin
@@ -174,12 +205,13 @@ begin
   // se for um numero, entra no temp, até aparecer um sinal
     if expr[i] in ['0'..'9'] then
       temp := temp + expr[i]
-    else if expr[i] in ['+', '-', '*', '/'] then
+    else if expr[i] in ['+', '-', '*', '/', 'm'] then
   // se for um sinal, ele aplica a equação
   //sim ele n prioriza mult. e div. igual ele deveria, mas isso é problema pra outra hora
     begin
       num := StrToInt(temp);
       case operador of
+        'm': total := modhandler(total, num, expr);
         '+': total := total + num;
         '-': total := total - num;
         '*': total := total * num;
@@ -192,11 +224,12 @@ begin
     end;
   end;
 
-  // logica pro ultimo numero (se houver)
+  // logica pro ultimo numero
   if temp <> '' then
   begin
     num := StrToInt(temp);
     case operador of
+      'm': total := modhandler(total, num, expr);
       '+': total := total + num;
       '-': total := total - num;
       '*': total := total * num;
@@ -229,6 +262,11 @@ end;
 procedure TForm3.btnminusClick(Sender: TObject);
 begin
   AdicionarSinal ('-');
+end;
+
+procedure TForm3.btnmodClick(Sender: TObject);
+begin
+  AdicionarSinal ('m')
 end;
 
 procedure TForm3.btnplusClick(Sender: TObject);
