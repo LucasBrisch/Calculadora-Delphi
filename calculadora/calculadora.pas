@@ -165,7 +165,8 @@ end;
 
 procedure TForm3.btn00Click(Sender: TObject);
 begin
-  AdicionarNumero('00');
+  AdicionarNumero('0');
+  AdicionarNumero('0');
 end;
 
 function modhandler (total, num : integer; expr : string) : integer;

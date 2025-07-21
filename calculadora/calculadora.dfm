@@ -191,6 +191,7 @@ object Form3: TForm3
             Align = alClient
             Caption = '00'
             TabOrder = 1
+            OnClick = btn00Click
           end
           object btndot: TButton
             Left = 221
