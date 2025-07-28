@@ -61,6 +61,7 @@ type
     procedure btndivideClick(Sender: TObject);
     procedure btnmodClick(Sender: TObject);
     procedure btnbackspaceClick(Sender: TObject);
+    procedure btnpercentageClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -268,6 +269,11 @@ end;
 procedure TForm3.btnmodClick(Sender: TObject);
 begin
   AdicionarSinal ('m')
+end;
+
+procedure TForm3.btnpercentageClick(Sender: TObject);
+begin
+  AdicionarSinal ('%')
 end;
 
 procedure TForm3.btnplusClick(Sender: TObject);

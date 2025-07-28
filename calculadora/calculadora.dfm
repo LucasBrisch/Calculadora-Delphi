@@ -72,6 +72,7 @@ object Form3: TForm3
             Align = alTop
             Caption = '%'
             TabOrder = 1
+            OnClick = btnpercentageClick
           end
           object btnbackspace: TButton
             Left = 0
