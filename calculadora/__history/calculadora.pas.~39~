@@ -62,7 +62,6 @@ type
     procedure btnmodClick(Sender: TObject);
     procedure btnbackspaceClick(Sender: TObject);
     procedure btnpercentageClick(Sender: TObject);
-    function fracionarexpressao(expr : string) : TStringList;
   private
     { Private declarations }
   public
@@ -70,7 +69,6 @@ type
     var resultado, temp, num1, num2, operador : String;
     var tempresultado : integer;
     var second, resolvido : boolean;
-    var ListaEquacao: TStringList;
 
 
   end;
@@ -191,27 +189,6 @@ for I := 0 to Length(expr) do begin
 end;
 end;
 
-function TForm3.FracionarExpressao(expr: String): TStringList;
-var temp, temp2: String;
-var i: integer;
-var primeiro: boolean;
-begin
-  primeiro := true;
-  ListaEquacao := TStringList.Create;
-
-
-  for i := 0 to Length(expr) - 1 do begin
-    if expr[i] in ['0'..'9'] then begin
-    if primeiro then begin
-    temp := '+' + expr [i];
-    primeiro := false;
-    end;
-    temp := temp + expr[i];
-    end;
-  end;
-
-end;
-
 
 function AvaliarExpressao(expr: string): Integer;
 var
@@ -220,19 +197,19 @@ var
   temp: string;
 begin
   total := 0;
-  // comeÃ§a com '+' pra "adicionar" o primeiro numero
+  // começa com '+' pra "adicionar" o primeiro numero
   operador := '+';
   temp := '';
 
   // roda a conta inteira
   for i := 1 to Length(expr) do
   begin
-  // se for um numero, entra no temp, atÃ© aparecer um sinal
+  // se for um numero, entra no temp, até aparecer um sinal
     if expr[i] in ['0'..'9'] then
       temp := temp + expr[i]
     else if expr[i] in ['+', '-', '*', '/', 'm'] then
-  // se for um sinal, ele aplica a equaÃ§Ã£o
-  //sim ele n prioriza mult. e div. igual ele deveria, mas isso Ã© problema pra outra hora
+  // se for um sinal, ele aplica a equação
+  //sim ele n prioriza mult. e div. igual ele deveria, mas isso é problema pra outra hora
     begin
       num := StrToInt(temp);
       case operador of
@@ -242,7 +219,7 @@ begin
         '*': total := total * num;
         '/': total := total div num;
       end;
-  //reseta o temp e muda o operador (ele comeÃ§a com + pq o mais so coloca o primeiro numero
+  //reseta o temp e muda o operador (ele começa com + pq o mais so coloca o primeiro numero
   //ai ele adiciona o sinal q vai ser usado com o prox. numero q vier
       operador := expr[i];
       temp := '';

@@ -62,6 +62,7 @@ type
     procedure btnmodClick(Sender: TObject);
     procedure btnbackspaceClick(Sender: TObject);
     procedure btnpercentageClick(Sender: TObject);
+    function fracionarexpressao(expr : string) : TStringList;
   private
     { Private declarations }
   public
@@ -69,6 +70,7 @@ type
     var resultado, temp, num1, num2, operador : String;
     var tempresultado : integer;
     var second, resolvido : boolean;
+    var ListaEquacao: TStringList;
 
 
   end;
@@ -187,6 +189,27 @@ for I := 0 to Length(expr) do begin
   end;
 
 end;
+end;
+
+function TForm3.FracionarExpressao(expr: String): TStringList;
+var temp, temp2: String;
+var i: integer;
+var primeiro: boolean;
+begin
+  primeiro := true;
+  ListaEquacao := TStringList.Create;
+
+
+  for i := 0 to Length(expr) - 1 do begin
+    if expr[i] in ['0'..'9'] then begin
+    if primeiro then begin
+    temp := '+' + expr [i];
+    primeiro := false;
+    end;
+    temp := temp + expr[i];
+    end;
+  end;
+
 end;
 
 
